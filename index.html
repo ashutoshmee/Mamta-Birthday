@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Mamta ❤️</title>
 
 <style>
@@ -18,56 +17,41 @@ html{
 body{
   margin:0;
   min-height:100vh;
-  font-family:"Segoe UI",Arial,sans-serif;
-  background:
-    radial-gradient(circle at top,#35152d 0%,#180914 45%,#0d050d 100%);
-  color:white;
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:linear-gradient(135deg,#160817,#321126,#180917);
+  color:#fff;
   overflow-x:hidden;
 }
 
-/* Floating hearts */
-.float{
+canvas{
   position:fixed;
-  bottom:-40px;
+  inset:0;
   pointer-events:none;
-  z-index:1;
-  animation:floatUp linear infinite;
-  opacity:.8;
+  z-index:0;
 }
 
-@keyframes floatUp{
-  0%{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-  }
-  15%{
-    opacity:.8;
-  }
-  100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-  }
-}
-
-/* Main container */
 .container{
   position:relative;
   z-index:2;
-  width:min(100%,900px);
+  width:100%;
+  max-width:1000px;
   margin:auto;
-  padding:45px 18px 70px;
-  text-align:center;
+  padding:25px 16px 60px;
 }
 
-/* Hero */
 .hero{
-  padding:25px 10px 35px;
+  text-align:center;
+  padding:45px 20px;
+  margin-bottom:35px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:30px;
+  background:rgba(55,12,38,.65);
+  box-shadow:0 0 35px rgba(255,70,150,.25);
 }
 
 .heart{
-  font-size:72px;
-  animation:pulse 1.5s infinite;
-  filter:drop-shadow(0 0 15px #ff4d88);
+  font-size:70px;
+  animation:pulse 1.3s infinite;
 }
 
 @keyframes pulse{
@@ -76,161 +60,462 @@ body{
   }
 }
 
-.small{
-  color:#ffd1df;
+.hero h1{
+  margin:15px 0 10px;
+  font-size:clamp(42px,9vw,78px);
+  line-height:1.1;
+  color:#ffd1e5;
+  text-shadow:0 0 20px #ff4f9a;
+}
+
+.hero p{
+  font-size:clamp(18px,4vw,25px);
+  margin:15px 0 25px;
+}
+
+.btn{
+  border:0;
+  padding:13px 22px;
+  border-radius:12px;
+  background:#fff;
+  color:#67153f;
   font-size:17px;
-  margin-top:12px;
-}
-
-h1{
-  margin:8px 0;
-  font-size:clamp(42px,11vw,76px);
-  color:#ffb6ce;
-  text-shadow:
-    0 0 10px #ff4d88,
-    0 0 30px rgba(255,77,136,.5);
-}
-
-.subtitle{
-  font-size:20px;
-  color:#ffe5ee;
-  line-height:1.7;
-}
-
-/* Message card */
-.card{
-  background:rgba(45,15,35,.82);
-  border:1px solid rgba(255,160,195,.35);
-  border-radius:28px;
-  padding:28px 22px;
-  margin:25px auto;
-  box-shadow:
-    0 15px 50px rgba(0,0,0,.45),
-    0 0 30px rgba(255,77,136,.08);
-  backdrop-filter:blur(8px);
-}
-
-.card p{
-  font-size:18px;
-  line-height:1.9;
-  color:#ffe9f0;
-  margin:12px 0;
-}
-
-.highlight{
-  color:#ffb4ca;
-  font-weight:700;
-}
-
-/* Gallery */
-.section-title{
-  font-size:30px;
-  margin:55px 0 22px;
-  color:#ffd0df;
-  text-shadow:0 0 12px rgba(255,100,150,.5);
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
-}
-
-.photo{
-  position:relative;
-  overflow:hidden;
-  border-radius:24px;
-  border:1px solid rgba(255,160,195,.35);
-  background:#260d1d;
-  box-shadow:0 10px 30px rgba(0,0,0,.45);
-  aspect-ratio:1/1;
-}
-
-.photo img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  transition:transform .5s ease;
-}
-
-.photo:hover img{
-  transform:scale(1.08);
-}
-
-.photo::after{
-  content:"❤️";
-  position:absolute;
-  right:12px;
-  bottom:10px;
-  font-size:22px;
-  opacity:.85;
-}
-
-/* Emotional section */
-.love-box{
-  margin-top:45px;
-  padding:30px 22px;
-  border-radius:28px;
-  background:linear-gradient(
-    145deg,
-    rgba(100,24,62,.75),
-    rgba(35width:100%;
-padding:32px 22px;
-border:1px solid rgba(255,255,255,.16);
-border-radius:28px;
-background:rgba(255,255,255,.07);
-backdrop-filter:blur(12px);
-box-shadow:0 20px 80px rgba(0,0,0,.35);
-}
-
-.kicker{
-letter-spacing:3px;
-text-transform:uppercase;
-font-size:12px;
-opacity:.8;
-}
-
-h1{
-font-family:Georgia,serif;
-font-size:clamp(44px,12vw,80px);
-margin:12px 0;
-line-height:.95;
-}
-
-.heart{
-font-size:58px;
-animation:pulse 1.5s infinite;
-margin:15px;
-}
-
-.date{
-font-size:18px;
-opacity:.9;
-}
-
-button{
-border:0;
-border-radius:999px;
-padding:15px 24px;
-font-size:16px;
-font-weight:700;
-background:#fff;
-color:#7b214d;
-cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-margin-top:20px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 5px 20px rgba(255,255,255,.2);
 }
 
 .section{
-padding:60px 18px;
-max-width:950px;
-margin:auto;
+  margin:35px 0;
 }
 
 .section h2{
-font-family:Georgia,serif;
-font-size:34px;
+  font-size:clamp(28px,6vw,42px);
+  margin-bottom:20px;
+  text-shadow:0 0 12px rgba(255,100,170,.5);
+}
+
+.message{
+  font-size:clamp(18px,4.5vw,23px);
+  line-height:1.75;
+  text-align:left;
+  background:rgba(65,17,47,.55);
+  border:1px solid rgba(255,170,210,.25);
+  border-radius:25px;
+  padding:25px 20px;
+  box-shadow:0 0 30px rgba(255,60,150,.12);
+}
+
+.message strong{
+  color:#ffb5d5;
+}
+
+.memories{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.memory{
+  background:#260e1d;
+  border:1px solid rgba(255,160,205,.35);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.memory img{
+  display:block;
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  background:#260e1d;
+}
+
+.memory p{
+  margin:0;
+  padding:12px;
+  text-align:center;
+  font-size:16px;
+  color:#ffd7e8;
+}
+
+.final{
+  text-align:center;
+  padding:40px 20px;
+  margin-top:40px;
+  border-radius:30px;
+  background:rgba(80,17,52,.55);
+  border:1px solid rgba(255,170,210,.3);
+}
+
+.final h2{
+  font-size:clamp(30px,7vw,48px);
+  color:#ffb9d7;
+}
+
+.final p{
+  font-size:20px;
+  line-height:1.7;
+}
+
+.hidden{
+  display:none;
+}
+
+.floating{
+  position:fixed;
+  font-size:25px;
+  animation:floatUp 6s linear infinite;
+  opacity:.8;
+  z-index:1;
+}
+
+@keyframes floatUp{
+  from{
+    transform:translateY(100vh) rotate(0deg);
+    opacity:0;
+  }
+  20%{
+    opacity:.9;
+  }
+  to{
+    transform:translateY(-120px) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:650px){
+  .container{
+    padding:10px 10px 45px;
+  }
+
+  .hero{
+    padding:35px 15px;
+  }
+
+  .memories{
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+
+  .memory{
+    border-radius:22px;
+  }
+
+  .memory img{
+    height:300px;
+  }
+
+  .message{
+    padding:20px 15px;
+    line-height:1.65;
+  }
+}
+
+@media(max-width:430px){
+  .memory img{
+    height:250px;
+  }
+
+  .memory p{
+    font-size:14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="c"></canvas>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="heart">❤️</div>
+
+    <h1>
+      Happy Birthday<br>
+      Mamta
+    </h1>
+
+    <p>
+      मेरी ज़िंदगी की सबसे खास इंसान के नाम ✨
+    </p>
+
+    <button class="btn" onclick="showSecret()">
+      मेरे दिल की बात 💌
+    </button>
+
+  </section>
+
+
+  <!-- EMOTIONAL MESSAGE -->
+  <section class="section">
+
+    <h2>मेरी प्यारी Mamta ❤️</h2>
+
+    <div class="message">
+
+      जन्मदिन मुबारक हो, मेरी प्यारी Mamta ❤️🎂✨
+
+      <br><br>
+
+      पता नहीं क्यों, लेकिन तुम्हारे लिए लिखते समय
+      शब्द हमेशा कम पड़ जाते हैं...
+      क्योंकि तुम मेरे लिए सिर्फ एक इंसान नहीं हो,
+      <strong>बल्कि मेरी ज़िंदगी का वो खूबसूरत हिस्सा हो
+      जिसे मैं हमेशा अपने दिल के करीब रखना चाहता हूँ।</strong> ❤️
+
+      <br><br>
+
+      तुम्हारे साथ बिताया हुआ हर छोटा सा पल मेरे लिए
+      बहुत खास है। तुम्हारी मुस्कान, तुम्हारी बातें,
+      तुम्हारा रूठना और फिर मान जाना...
+      ये सारी छोटी-छोटी चीज़ें ही मेरी सबसे प्यारी यादें हैं। 🥹❤️
+
+      <br><br>
+
+      शायद मैं हर बार अपने दिल की बात सही तरीके से
+      कह नहीं पाता, लेकिन सच ये है कि
+      <strong>तुम मेरे लिए बहुत ज्यादा मायने रखती हो।</strong>
+
+      <br><br>
+
+      मैं बस यही चाहता हूँ कि तुम्हारी ज़िंदगी में
+      हमेशा खुशियाँ रहें, तुम्हारी आँखों में कभी आँसू न आएँ,
+      तुम्हारे चेहरे की मुस्कान कभी कम न हो
+      और तुम्हारे सारे सपने पूरे हों। ❤️✨
+
+      <br><br>
+
+      ज़िंदगी चाहे हमें किसी भी मोड़ पर ले जाए,
+      लेकिन तुम्हारे साथ बिताए हुए पल मेरे दिल में
+      हमेशा वैसे ही रहेंगे। कुछ रिश्ते नाम के मोहताज नहीं होते...
+      <strong>वो बस दिल में एक खास जगह बना लेते हैं।</strong> ❤️
+
+      <br><br>
+
+      आज तुम्हारा जन्मदिन है,
+      लेकिन सच कहूँ तो मेरे लिए भी ये एक खास दिन है,
+      क्योंकि आज के दिन दुनिया में तुम आई थीं...
+      और शायद इसी वजह से मेरी दुनिया थोड़ी और खूबसूरत हुई। ❤️
+
+      <br><br>
+
+      बस हमेशा खुश रहना, मुस्कुराते रहना,
+      अपना बहुत ख्याल रखना। 🥰
+
+      <br><br>
+
+      <strong>
+        Happy Birthday Mamta ❤️🎂
+        तुम हमेशा मेरे लिए बहुत खास रहोगी। ❤️✨
+      </strong>
+
+    </div>
+
+  </section>
+
+
+  <!-- MEMORIES -->
+  <section class="section">
+
+    <h2>हमारी खूबसूरत यादें 📸❤️</h2>
+
+    <div class="memories">
+
+      <div class="memory">
+        <img
+          src="https://raw.githubusercontent.com/ashutoshmee/Mamta-Birthday/main/IMG-20220830-WA0012.jpg"
+          alt="Mamta Memory 1">
+        <p>एक खूबसूरत याद ❤️</p>
+      </div>
+
+      <div class="memory">
+        <img
+          src="https://raw.githubusercontent.com/ashutoshmee/Mamta-Birthday/main/IMG-20220903-WA0015.jpg"
+          alt="Mamta Memory 2">
+        <p>हमारी प्यारी याद ✨</p>
+      </div>
+
+      <div class="memory">
+        <img
+          src="https://raw.githubusercontent.com/ashutoshmee/Mamta-Birthday/main/IMG-20251005-WA0002.jpg"
+          alt="Mamta Memory 3">
+        <p>वो खूबसूरत पल 🥰</p>
+      </div>
+
+      <div class="memory">
+        <img
+          src="https://raw.githubusercontent.com/ashutoshmee/Mamta-Birthday/main/IMG-20260217-WA0003.jpg"
+          alt="Mamta Memory 4">
+        <p>कुछ पल हमेशा याद रहते हैं ❤️</p>
+      </div>
+
+      <div class="memory">
+        <img
+          src="https://raw.githubusercontent.com/ashutoshmee/Mamta-Birthday/main/IMG_20260814_133714272%20%281%29.jpg"
+          alt="Mamta Memory 5">
+        <p>हमारी एक और याद 📸❤️</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SECRET MESSAGE -->
+  <section id="secret" class="final hidden">
+
+    <h2>मेरे दिल की बात ❤️</h2>
+
+    <p>
+      Mamta... ❤️
+      <br><br>
+      कुछ लोग हमारी ज़िंदगी में बस आते हैं,
+      और कुछ लोग हमारी ज़िंदगी का हिस्सा बन जाते हैं।
+      <br><br>
+      <strong>
+        तुम मेरे लिए उन्हीं खास लोगों में से हो। ❤️
+      </strong>
+      <br><br>
+      तुम्हारी खुशी मेरे लिए हमेशा मायने रखेगी।
+      बस ऐसे ही मुस्कुराती रहना...
+      क्योंकि तुम्हारी मुस्कान बहुत खूबसूरत है। 🥹❤️
+      <br><br>
+      हमेशा खुश रहो। ❤️✨
+    </p>
+
+  </section>
+
+</div>
+
+
+<script>
+
+const emojis = ['❤️','💗','💕','✨','🌸','💖'];
+
+for(let i=0;i<25;i++){
+
+  const e = document.createElement('div');
+
+  e.className='floating';
+
+  e.innerText =
+    emojis[Math.floor(Math.random()*emojis.length)];
+
+  e.style.left =
+    Math.random()*100 + 'vw';
+
+  e.style.animationDuration =
+    (4 + Math.random()*5) + 's';
+
+  e.style.animationDelay =
+    Math.random()*5 + 's';
+
+  e.style.fontSize =
+    (18 + Math.random()*20) + 'px';
+
+  document.body.appendChild(e);
+}
+
+
+function showSecret(){
+
+  const box = document.getElementById('secret');
+
+  box.classList.remove('hidden');
+
+  box.scrollIntoView({
+    behavior:'smooth'
+  });
+
+}
+
+
+/* PARTICLES */
+
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+
+let w;
+let h;
+
+function resize(){
+
+  w = canvas.width =
+    window.innerWidth;
+
+  h = canvas.height =
+    window.innerHeight;
+}
+
+resize();
+
+window.addEventListener('resize',resize);
+
+const particles=[];
+
+for(let i=0;i<90;i++){
+
+  particles.push({
+
+    x:Math.random()*w,
+
+    y:Math.random()*h,
+
+    r:Math.random()*2+0.5,
+
+    vx:(Math.random()-.5)*0.4,
+
+    vy:(Math.random()-.5)*0.4
+
+  });
+
+}
+
+function draw(){
+
+  ctx.clearRect(0,0,w,h);
+
+  ctx.fillStyle='rgba(255,190,220,.55)';
+
+  particles.forEach(p=>{
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if(p.x<0) p.x=w;
+    if(p.x>w) p.x=0;
+    if(p.y<0) p.y=h;
+    if(p.y>h) p.y=0;
+
+    ctx.beginPath();
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.r,
+      0,
+      Math.PI*2
+    );
+
+    ctx.fill();
+
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
+</script>
+
+</body>
+</html>font-size:34px;
 text-align:center;
 margin:0 0 25px;
 }
