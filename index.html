@@ -1,40 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Happy Birthday Mamta ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
+*{box-sizing:border-box}
+
+html,body{
+margin:0;
+padding:0;
+background:#100812;
+color:#fff;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 
-body{
-  margin:0;
-  min-height:100vh;
-  font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#14001f,#35002f,#12001b);
-  color:white;
-  overflow-x:hidden;
+body{overflow-x:hidden}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:28px 18px;
+background:
+radial-gradient(circle at 50% 20%,#7b214d 0,#321126 34%,#100812 75%);
+position:relative;
+overflow:hidden;
 }
 
-canvas{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:0;
+.glow{
+position:absolute;
+width:280px;
+height:280px;
+border-radius:50%;
+background:#ff4f9a;
+filter:blur(90px);
+opacity:.28;
+top:5%;
+left:50%;
+transform:translateX(-50%);
 }
 
 .card{
-  position:relative;
-  z-index:2;
-  width:min(92%,700px);
-  margin:40px auto;
-  padding:30px 22px;
-  text-align:center;
-  background:rgba(255,255,255,.09);
+position:relative;
+z-index:2;
+max-width:760px;
+width:100%;
+padding:32px 22px;
+border:1px solid rgba(255,255,255,.16);
+border-radius:28px;
+background:rgba(255,255,255,.07);
+backdrop-filter:blur(12px);
+box-shadow:0 20px 80px rgba(0,0,0,.35);
+}
+
+.kicker{
+letter-spacing:3px;
+text-transform:uppercase;
+font-size:12px;
+opacity:.8;
+}
+
+h1{
+font-family:Georgia,serif;
+font-size:clamp(44px,12vw,80px);
+margin:12px 0;
+line-height:.95;
+}
+
+.heart{
+font-size:58px;
+animation:pulse 1.5s infinite;
+margin:15px;
+}
+
+.date{
+font-size:18px;
+opacity:.9;
+}
+
+button{
+border:0;
+border-radius:999px;
+padding:15px 24px;
+font-size:16px;
+font-weight:700;
+background:#fff;
+color:#7b214d;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+margin-top:20px;
+}
+
+.section{
+padding:60px 18px;
+max-width:950px;
+margin:auto;
+}
+
+.section h2{
+font-family:Georgia,serif;
+font-size:34px;
+text-align:center;
+margin:0 0 25px;
+}
+
+.letter{
+white-space:pre-line;
+line-height:1.9;
+font-size:17px;
+background:linear-gradient(
+135deg,
+rgba(255,255,255,.09),
+rgba(255,255,255,.04)
+);
+border:1px solid rgba(255,255,255,.12);
+border-radius:24px;
+padding:28px;
+box-shadow:0 15px 50px rgba(0,0,0,.2);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.photo{
+aspect-ratio:4/5;
+border-radius:20px;
+overflow:hidden;
+background:#25101d;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+border:1px solid rgba(255,255,255,.15);
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.4s;
+}
+
+.photo img:hover{
+transform:scale(1.05);
+}
+
+.love{
+text-align:center;
+font-family:Georgia,serif;
+font-size:22px;
+line-height:1.7;
+margin-top:30px;
+}
+
+.footer{
+text-align:center;
+padding:50px 18px 70px;
+opacity:.9;
+}
+
+.signature{
+font-family:Georgia,serif;
+font-size:26px;
+margin-top:12px;
+}
+
+.heart-float{
+position:fixed;
+bottom:-30px;
+font-size:22px;
+animation:float 7s linear infinite;
+opacity:.75;
+z-index:5;
+pointer-events:none;
+}
+
+.hidden{
+display:none;
+}
+
+#secret{
+margin-top:22px;
+font-size:18px;
+line-height:1.8;
+padding:25px;
+border-radius:22px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.12);
+}
+
+@keyframes pulse{
+50%{transform:scale(1.12)}
+}
+
+@keyframes float{
+from{
+transform:translateY(0) rotate(0deg);
+opacity:0
+}
+10%{opacity:.75}
+to{
+transform:translateY(-110vh) rotate(25deg);
+opacity:0
+}
+}
+
+@media(min-width:700px){
+.gallery{
+grid-template-columns:repeat(3,1fr);
+}
+
+.section{
+padding-top:80px;
+}
+}
+
+@media(max-width:500px){
+.gallery{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.section{
+padding:45px 14px;
+}
+
+.letter{
+font-size:16px;
+padding:22px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="glow"></div>
+
+<div class="card">
+
+<div class="kicker">
+8 September • A day made for you
+</div>
+
+<div class="heart">❤️</div>
+
+<h1>
+Happy Birthday<br>
+Mamta
+</h1>
+
+<div class="date">
+मेरी जिंदगी की सबसे खास इंसान के नाम ✨
+</div>
+
+<button onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+मेरे दिल की बात 💌
+</button>
+
+</div>
+</section>
+
+
+<section class="section" id="letter">
+
+<h2>
+मेरी प्यारी Mamta ❤️
+</h2>
+
+<div class="letter">
+
+जन्मदिन मुबारक हो, मेरी प्यारी Mamta ❤️🎂✨
+
+
+पता नहीं क्यों, लेकिन तुम्हारे लिए लिखते समय
+शब्द हमेशा कम पड़ जाते हैं...
+क्योंकि तुम मेरे लिए सिर्फ एक इंसान नहीं हो,
+बल्कि मेरी जिंदगी का वो खूबसूरत हिस्सा हो
+जिसे मैं हमेशा अपने दिल के करीब रखना चाहता हूँ। ❤️
+
+
+तुम्हारे साथ बिताया हुआ हर छोटा सा पल
+मेरे लिए बहुत खास है।
+तुम्हारी मुस्कान, तुम्हारी बातें,
+तुम्हारा रूठना और फिर मान जाना...
+ये सारी छोटी-छोटी चीज़ें ही मेरी सबसे प्यारी यादें हैं। 🥹❤️
+
+
+शायद मैं हर बार अपने दिल की बात
+सही तरीके से कह नहीं पाता,
+लेकिन सच ये है कि तुम मेरे लिए
+बहुत ज्यादा मायने रखती हो।
+
+
+मैं बस यही चाहता हूँ कि तुम्हारी जिंदगी में
+हमेशा खुशियाँ रहें,
+तुम्हारी आँखों में कभी आँसू न आएँ,
+तुम्हारे चेहरे की मुस्कान कभी कम न हो
+और तुम्हारे सारे सपने पूरे हों। ❤️✨
+
+
+जिंदगी चाहे हमें किसी भी मोड़ पर ले जाए,
+लेकिन तुम्हारे साथ बिताए हुए पल
+मेरे दिल में हमेशा वैसे ही रहेंगे।
+
+कुछ रिश्ते नाम के मोहताज नहीं होते...
+वो बस दिल में एक खास जगह बना लेते हैं। ❤️
+
+
+आज तुम्हारा जन्मदिन है,
+लेकिन सच कहूँ तो मेरे लिए ये भी एक खास दिन है,
+क्योंकि आज के दिन दुनिया में
+तुम आई थीं। ❤️
+
+
+बस हमेशा खुश रहना, मुस्कुराते रहना
+और खुद का बहुत ख्याल रखना। 🥰
+
+
+Happy Birthday Mamta ❤️🎂
+
+तुम हमेशा मेरे लिए बहुत खास रहोगी। ❤️✨
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<h2>
+हमारी खूबसूरत यादें 📸❤️
+</h2>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="1000163493.jpg" alt="Mamta Memory 1">
+</div>
+
+<div class="photo">
+<img src="1000163492.jpg" alt="Mamta Memory 2">
+</div>
+
+<div class="photo">
+<img src="1000547579.jpg" alt="Mamta Memory 3">
+</div>
+
+<div class="photo">
+<img src="1000508958.jpg" alt="Mamta Memory 4">
+</div>
+
+<div class="photo">
+<img src="1000508964.jpg" alt="Mamta Memory 5">
+</div>
+
+<div class="photo">
+<img src="1000508961.jpg" alt="Mamta Memory 6">
+</div>
+
+<div class="photo">
+<img src="1000508955.jpg" alt="Mamta Memory 7">
+</div>
+
+</div>
+
+
+<div class="love">
+
+तुम्हारे साथ बिताया हुआ हर पल
+मेरे लिए एक खूबसूरत याद है। ❤️
+
+<br>
+
+और इन तस्वीरों में सिर्फ तस्वीरें नहीं,
+हमारी कुछ प्यारी यादें बसी हैं। 🥹💕
+
+</div>
+
+</section>
+
+
+<section class="section">
+
+<div style="text-align:center">
+
+<button onclick="document.getElementById('secret').classList.toggle('hidden')">
+मेरे पास तुम्हारे लिए एक आखिरी बात है 💌
+</button>
+
+<div id="secret" class="hidden">
+
+Mamta ❤️
+
+अगर कभी तुम्हें लगे कि तुम अकेली हो,
+तो बस इतना याद रखना कि
+तुम्हारी खुशी की दुआ करने वाला
+कोई हमेशा है।  background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.18);
   border-radius:25px;
   backdrop-filter:blur(12px);
