@@ -3,33 +3,295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Birthday Mamta ❤️</title>
+
 <style>
-*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Georgia,serif;background:radial-gradient(circle at top,#ffb6c9,#6b183d 55%,#160512);color:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center}
-canvas{position:fixed;inset:0;pointer-events:none}.card{position:relative;width:min(92%,620px);padding:48px 28px;text-align:center;border:1px solid rgba(255,255,255,.3);border-radius:28px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);box-shadow:0 20px 80px rgba(0,0,0,.35);z-index:2}
-.heart{font-size:58px;animation:pulse 1.3s infinite}.small{letter-spacing:4px;text-transform:uppercase;font:600 12px Arial,sans-serif;opacity:.9}.name{font-size:clamp(52px,14vw,90px);margin:8px 0;color:#fff0f5;text-shadow:0 0 25px #ff75a8}.msg{font-size:20px;line-height:1.7;margin:20px auto;max-width:520px}.wish{font-size:16px;opacity:.9}.btn{margin-top:22px;padding:13px 25px;border:0;border-radius:999px;background:#fff;color:#9b2857;font-weight:bold;cursor:pointer;font-size:15px}.hidden{display:none;margin-top:22px;font-size:18px;line-height:1.6}
-@keyframes pulse{50%{transform:scale(1.16)}} .float{position:fixed;bottom:-30px;animation:up linear infinite;opacity:.65;z-index:1}@keyframes up{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#14001f,#35002f,#12001b);
+  color:white;
+  overflow-x:hidden;
+}
+
+canvas{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.card{
+  position:relative;
+  z-index:2;
+  width:min(92%,700px);
+  margin:40px auto;
+  padding:30px 22px;
+  text-align:center;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:25px;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.heart{
+  font-size:65px;
+  animation:pulse 1.3s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.18)}
+}
+
+.small{
+  margin-top:8px;
+  font-size:17px;
+  opacity:.85;
+}
+
+.name{
+  margin:10px 0;
+  font-size:48px;
+  font-weight:bold;
+  background:linear-gradient(90deg,#ff7eb3,#ffb3d9,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.msg{
+  font-size:20px;
+  line-height:1.7;
+  margin:20px auto;
+}
+
+.wish{
+  font-size:17px;
+  line-height:1.7;
+  opacity:.9;
+  margin-bottom:25px;
+}
+
+/* PHOTO GALLERY */
+
+.gallery-title{
+  font-size:25px;
+  margin:30px 0 15px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  border-radius:18px;
+  border:2px solid rgba(255,255,255,.2);
+  box-shadow:0 8px 25px rgba(0,0,0,.4);
+  transition:.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+.gallery img:last-child{
+  grid-column:1/-1;
+  height:270px;
+}
+
+/* BUTTON */
+
+.btn{
+  border:0;
+  padding:14px 25px;
+  margin-top:25px;
+  border-radius:30px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  color:white;
+  background:linear-gradient(90deg,#ff4081,#ff1744);
+  box-shadow:0 8px 25px rgba(255,23,68,.35);
+}
+
+.hidden{
+  display:none;
+}
+
+#secret{
+  margin-top:20px;
+  padding:18px;
+  border-radius:16px;
+  background:rgba(255,255,255,.08);
+  line-height:1.7;
+  font-size:17px;
+}
+
+.footer{
+  margin-top:25px;
+  font-size:13px;
+  opacity:.6;
+}
+
+@media(max-width:500px){
+  .card{
+    margin:20px auto;
+    padding:25px 15px;
+  }
+
+  .name{
+    font-size:38px;
+  }
+
+  .msg{
+    font-size:18px;
+  }
+
+  .gallery img{
+    height:180px;
+  }
+
+  .gallery img:last-child{
+    height:230px;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <canvas id="c"></canvas>
+
 <div class="card">
+
   <div class="heart">❤️</div>
-  <div class="small">A little birthday surprise for</div>
-  <div class="name">Mamta</div>
-  <div class="msg">Happy Birthday, my love. ✨<br>
-  You make ordinary moments feel special, and my world a little brighter just by being in it.</div>
-  <div class="wish">May your smile stay this beautiful, your dreams come true, and every year bring you even more happiness. 💕</div>
-  <button class="btn" onclick="document.getElementById('secret').classList.toggle('hidden')">Open my little surprise 💌</button>
-  <div id="secret" class="hidden">No matter how many birthdays come and go, I hope I get to keep making beautiful memories with you. ❤️<br><br>Happy Birthday, Mamta! 🎂🌹</div>
+
+  <div class="small">
+    A little birthday surprise for
+  </div>
+
+  <div class="name">
+    Mamta
+  </div>
+
+  <div class="msg">
+    Happy Birthday, my love. ✨💖
+    <br>
+    You make ordinary moments feel special,
+    and my world a little more beautiful.
+  </div>
+
+  <div class="wish">
+    May your smile stay this beautiful,
+    your dreams come true,
+    and every year bring you even more happiness. 🌸
+  </div>
+
+  <h2 class="gallery-title">
+    💕 Beautiful Memories 💕
+  </h2>
+
+  <div class="gallery">
+
+    <img src="IMG-20220830-WA0012.jpg" alt="Mamta memory 1">
+
+    <img src="IMG-20220903-WA0015.jpg" alt="Mamta memory 2">
+
+    <img src="IMG-20251005-WA0002.jpg" alt="Mamta memory 3">
+
+    <img src="IMG-20260217-WA0003.jpg" alt="Mamta memory 4">
+
+    <img src="IMG_20260814_133714272 (1).jpg" alt="Mamta memory 5">
+
+  </div>
+
+  <button class="btn" onclick="showSecret()">
+    💌 One More Surprise
+  </button>
+
+  <div id="secret" class="hidden">
+    No matter how many birthdays come and go,
+    I will always be grateful that you are a part
+    of my life. ❤️
+    <br><br>
+    Happy Birthday, Mamta! 🎂✨
+  </div>
+
+  <div class="footer">
+    Made with ❤️ especially for Mamta
+  </div>
+
 </div>
+
 <script>
-const emojis=['❤️','💗','💕','✨','🌸','💖'];
-for(let i=0;i<22;i++){let e=document.createElement('div');e.className='float';e.textContent=emojis[Math.floor(Math.random()*emojis.length)];e.style.left=Math.random()*100+'vw';e.style.animationDuration=(6+Math.random()*8)+'s';e.style.fontSize=(16+Math.random()*22)+'px';e.style.animationDelay=(-Math.random()*10)+'s';document.body.appendChild(e)}
-const cv=document.getElementById('c'),x=cv.getContext('2d');let w,h,pts=[];
-function resize(){w=cv.width=innerWidth;h=cv.height=innerHeight} addEventListener('resize',resize);resize();
-for(let i=0;i<90;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,v:Math.random()*.5+.2});
-(function draw(){x.clearRect(0,0,w,h);x.fillStyle='rgba(255,255,255,.7)';pts.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();p.y-=p.v;if(p.y<0)p.y=h});requestAnimationFrame(draw)})();
+
+function showSecret(){
+  document.getElementById("secret").classList.remove("hidden");
+}
+
+/* FLOATING HEARTS */
+
+const emojis = ['❤️','💗','💕','✨','🌸','💖'];
+const particles = [];
+
+for(let i=0;i<35;i++){
+  particles.push({
+    x:Math.random()*innerWidth,
+    y:Math.random()*innerHeight,
+    emoji:emojis[Math.floor(Math.random()*emojis.length)],
+    size:14+Math.random()*20,
+    speed:.4+Math.random()*1
+  });
+}
+
+const canvas=document.getElementById("c");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+  canvas.width=innerWidth;
+  canvas.height=innerHeight;
+}
+
+resize();
+window.addEventListener("resize",resize);
+
+function draw(){
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach(p=>{
+
+    ctx.font=p.size+"px Arial";
+    ctx.globalAlpha=.7;
+    ctx.fillText(p.emoji,p.x,p.y);
+
+    p.y-=p.speed;
+
+    if(p.y<-30){
+      p.y=canvas.height+30;
+      p.x=Math.random()*canvas.width;
+    }
+
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+
 </script>
+
 </body>
 </html>
